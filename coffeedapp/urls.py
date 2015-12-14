@@ -20,5 +20,7 @@ import core.views as coreviews
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', coreviews.LandingView.as_view())
+    url(r'^$', coreviews.LandingView.as_view()),
+    url(r'location/$', coreviews.LocationListView.as_view()),
+    url(r'location/(?P<pk>\d+)/detail/$', coreviews.LocationDetailView.as_view(), name="location_list"),
 ]
